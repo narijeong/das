@@ -18,11 +18,11 @@ def merge(list1, list2):
         j += 1
     return combined
     
-# break list in half
-# base case when len(the_list) == 1
-# use merge() to put list together
+# 1.break list in half
+# 2.base case when len(the_list) == 1
+# 3.use merge() to put list together
 # space complexity: O(n)
-# time complexity: O(n log n)
+# time complexity: O(n log n) -> tree level steps downs to(log n) * iteration of list to compare (n)
 def merge_sort(my_list):
     if len(my_list) == 1:
         return my_list
