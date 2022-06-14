@@ -19,6 +19,8 @@ def quick_sort_helper(my_list, left, right):
         quick_sort_helper(my_list, pivot_index+1, right)
     return my_list
 
+# Time Complexity for best and average case: O(nlogn)
+# Sorted data: O(n^2) -> worst case 
 def quick_sort(my_list):
     return quick_sort_helper(my_list, 0, len(my_list)-1)
 
