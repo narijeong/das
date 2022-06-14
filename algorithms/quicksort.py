@@ -21,6 +21,7 @@ def quick_sort_helper(my_list, left, right):
 
 # Time Complexity for best and average case: O(nlogn)
 # Sorted data: O(n^2) -> worst case 
+# so you might want to use different sorting algorith on differnt situation
 def quick_sort(my_list):
     return quick_sort_helper(my_list, 0, len(my_list)-1)
 
