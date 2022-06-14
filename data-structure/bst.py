@@ -90,23 +90,45 @@ class BinarySearchTree:
     def dfs_pre_order(self):
         visit = []
         def traverse(current_node):
-            visit.append(current_node)       
+            visit.append(current_node.value)       
             if current_node.left is not None:
                 traverse(current_node.left)
             if current_node.right is not None:
                 traverse(current_node.right)
         traverse(self.root)
         return visit
+
+    def dfs_post_order(self):
+        visit = []
+        def traverse(current_node):
+            if current_node.left is not None:
+                traverse(current_node.left)
+            if current_node.right is not None:
+                traverse(current_node.right)
+            visit.append(current_node.value)       
+        traverse(self.root)
+        return visit
+
+    def dfs_in_order(self):
+        visit = []
+        def traverse(current_node):
+            if current_node.left is not None:
+                traverse(current_node.left)
+            visit.append(current_node.value)           
+            if current_node.right is not None:
+                traverse(current_node.right)
+        traverse(self.root)
+        return visit
   
 # test 
-bst = BinarySearchTree()
-bst.insert(47)
-bst.insert(21)
-bst.insert(76)
-bst.insert(18)
-bst.insert(27)
-bst.insert(52)
-bst.insert(82)
+# bst = BinarySearchTree()
+# bst.insert(47)
+# bst.insert(21)
+# bst.insert(76)
+# bst.insert(18)
+# bst.insert(27)
+# bst.insert(52)
+# bst.insert(82)
 
 # print(bst.root.value)
 # print(bst.root.left.value)
@@ -117,4 +139,8 @@ bst.insert(82)
 
 # tree traversal
 # print(bst.BFS())
-print(bst.dfs_pre_order())
+# print(bst.dfs_pre_order())
+# print(bst.dfs_post_order())
+# print(bst.dfs_in_order())
+
+
