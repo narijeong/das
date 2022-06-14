@@ -98,13 +98,13 @@ def print_items(a,b):
 ```
 #### Lists
 
-Adding, removing at the end -> O(1)
+* Adding, removing at the end -> O(1)
 
-Adding, removing at the front and middle -> O(n) _because of re-indexing_
+* Adding, removing at the front and middle -> O(n) _because of re-indexing_
 
-Searching -by value> O(n)
+* Searching -by value> O(n)
 
-Searching by index -> O(1)
+* Searching by index -> O(1)
 
 #### Wrap up
 
