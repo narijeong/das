@@ -32,6 +32,7 @@ print(selection_sort([4,2,6,5,1,3]))
 
 # start with second item and compare with the previous ones
 # O(n^2)
+# but best is O(n)
 def insertion_sort(my_list):
     for i in range(1, len(my_list)):
         temp = my_list[i]
