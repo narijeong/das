@@ -67,14 +67,54 @@ class BinarySearchTree:
             current_node = current_node.left
         return current_node
 
+    # Tree Traversal: different ways to visit every node in a tree
+    # BFS
+    # DFS: pre-order
+    # DFS: post-order
+    # DFS: in-order
+
+
+    def BFS(self):
+        queue = []
+        visit = []
+        queue.append(self.root)
+        while len(queue) > 0:
+            current_node = queue.pop(0)
+            visit.append(current_node.value)
+            if current_node.left is not None:
+                queue.append(current_node.left)
+            if current_node.right is not None:
+                queue.append(current_node.right)
+        return visit        
+
+    def dfs_pre_order(self):
+        visit = []
+        def traverse(current_node):
+            visit.append(current_node)       
+            if current_node.left is not None:
+                traverse(current_node.left)
+            if current_node.right is not None:
+                traverse(current_node.right)
+        traverse(self.root)
+        return visit
+  
 # test 
-# bst = BinarySearchTree()
-# bst.insert(47)
-# bst.insert(21)
-# bst.insert(76)
+bst = BinarySearchTree()
+bst.insert(47)
+bst.insert(21)
+bst.insert(76)
+bst.insert(18)
+bst.insert(27)
+bst.insert(52)
+bst.insert(82)
+
 # print(bst.root.value)
 # print(bst.root.left.value)
 # print(bst.root.right.value)
 # print(bst.contains(21))
 # print(bst.contains(20))
 # print(bst.minimum_value(bst.root.left))
+
+# tree traversal
+# print(bst.BFS())
+print(bst.dfs_pre_order())
